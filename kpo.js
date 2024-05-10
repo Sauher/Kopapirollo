@@ -1,18 +1,18 @@
-let playerpontsz = 0
-let geppontsz = 0
+let playerPontszam = 0
+let gepPontszam = 0
 let eredmenykiiras = document.getElementById("eredmeny")
 let playerPontText = document.getElementById("playerpont")
 let gepPontText = document.getElementById("geppont")
 
 function Nyereseg(){
     eredmenykiiras.innerHTML = "Eredmény: Te nyertél!"
-    playerpontsz += 1
-    playerPontText.innerText = playerpontsz
+    playerPontszam += 1
+    playerPontText.innerText = playerPontszam
 }
 function Vesztes(){
     eredmenykiiras.innerHTML = "Eredmény: Vesztettél!"
-    geppontsz += 1
-    gepPontText.innerText = geppontsz
+    gepPontszam += 1
+    gepPontText.innerText = gepPontszam
 }
 
 function Tisztitas(){
