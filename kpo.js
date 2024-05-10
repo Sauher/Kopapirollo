@@ -1,5 +1,19 @@
 let playerpontsz = 0
 let geppontsz = 0
+let eredmenykiiras = document.getElementById("eredmeny")
+let playerPontText = document.getElementById("playerpont")
+let gepPontText = document.getElementById("geppont")
+
+function Nyereseg(){
+    eredmenykiiras.innerHTML = "Eredmény: Te nyertél!"
+    playerpontsz += 1
+    playerPontText.innerText = playerpontsz
+}
+function Vesztes(){
+    eredmenykiiras.innerHTML = "Eredmény: Vesztettél!"
+    geppontsz += 1
+    gepPontText.innerText = geppontsz
+}
 
 function Tisztitas(){
     document.getElementById("ko").style.border = "0px"
@@ -22,37 +36,25 @@ function Jatek(ertek){
         document.getElementById("gep").src = "ollo.jpg"
     }
     if(botvalaszt == ertek){
-        document.getElementById("eredmeny").innerHTML = "Eredmény: Döntetlen"
+        eredmenykiiras.innerHTML = "Eredmény: Döntetlen"
     }
     else if(botvalaszt == "ko" && ertek == "papir"){
-        document.getElementById("eredmeny").innerHTML = "Eredmény: Te nyertél"
-        playerpontsz += 1
-        document.getElementById("playerpont").innerText = playerpontsz
+        Nyereseg()
     }
     else if(botvalaszt == "ko" && ertek == "ollo"){
-        document.getElementById("eredmeny").innerHTML = "Eredmény: Vesztettél!"
-        geppontsz += 1
-        document.getElementById("geppont").innerText = geppontsz
+        Vesztes()
     }
     else if(botvalaszt == "ollo" && ertek == "papir"){
-        document.getElementById("eredmeny").innerHTML = "Eredmény: Vesztettél!"
-        geppontsz += 1
-        document.getElementById("geppont").innerText = geppontsz
+        Vesztes()
     }
     else if(botvalaszt == "papir" && ertek == "ko"){
-        document.getElementById("eredmeny").innerHTML = "Eredmény: Vesztettél!"
-        geppontsz += 1
-        document.getElementById("geppont").innerText = geppontsz
+        Vesztes()
     }
     else if(botvalaszt == "ollo" && ertek == "ko"){
-        document.getElementById("eredmeny").innerHTML = "Eredmény: Te nyertél"
-        playerpontsz += 1
-        document.getElementById("playerpont").innerText = playerpontsz
+        Nyereseg()
     }
     else if(botvalaszt == "papir" && ertek == "ollo"){
-        playerpontsz += 1
-        document.getElementById("playerpont").innerText = playerpontsz
-        document.getElementById("eredmeny").innerHTML = "Eredmény: Te nyertél"
+        Nyereseg()
     }
     
 
@@ -63,4 +65,3 @@ function valaszt(kpo){
     valasztottelem.style.border = "3px solid red"
     Jatek(kpo)
 }
-
