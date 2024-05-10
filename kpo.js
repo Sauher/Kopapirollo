@@ -9,6 +9,7 @@ function Nyereseg(){
     playerPontszam += 1
     playerPontText.innerText = playerPontszam
 }
+
 function Vesztes(){
     eredmenykiiras.innerHTML = "Eredmény: Vesztettél!"
     gepPontszam += 1
@@ -20,6 +21,7 @@ function Tisztitas(){
     document.getElementById("papir").style.border = "0px"
     document.getElementById("ollo").style.border = "0px"
 }
+
 function Jatek(ertek){
     let random = Math.floor((Math.random() * 3) + 1)
     let botvalaszt = ""
@@ -38,27 +40,14 @@ function Jatek(ertek){
     if(botvalaszt == ertek){
         eredmenykiiras.innerHTML = "Eredmény: Döntetlen"
     }
-    else if(botvalaszt == "ko" && ertek == "papir"){
+    else if(botvalaszt == "ko" && ertek == "papir" || botvalaszt == "ollo" && ertek == "ko" || botvalaszt == "papir" && ertek == "ollo"){
         Nyereseg()
     }
-    else if(botvalaszt == "ko" && ertek == "ollo"){
+    else if(botvalaszt == "ko" && ertek == "ollo" || botvalaszt == "ollo" && ertek == "papir" || botvalaszt == "papir" && ertek == "ko"){
         Vesztes()
     }
-    else if(botvalaszt == "ollo" && ertek == "papir"){
-        Vesztes()
-    }
-    else if(botvalaszt == "papir" && ertek == "ko"){
-        Vesztes()
-    }
-    else if(botvalaszt == "ollo" && ertek == "ko"){
-        Nyereseg()
-    }
-    else if(botvalaszt == "papir" && ertek == "ollo"){
-        Nyereseg()
-    }
-    
-
 }
+
 function valaszt(kpo){
     Tisztitas()
     let valasztottelem = document.getElementById(kpo)
