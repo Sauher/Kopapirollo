@@ -1,11 +1,15 @@
 .kep{
-    height: 150px;
-    width: 150px;
+    height: 130px;
+    width: 130px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
 }
 body{
     color: black;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
 }
 #geppont{
     color: red;
@@ -15,8 +19,8 @@ body{
 }
 @media only screen and (max-width: 500px) {
     .kep{
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 80px;
     }
     h1{
         font-size: 30px;
@@ -35,8 +39,8 @@ body{
 }
 @media only screen and (max-width: 250px) {
     .kep{
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
     }
     h1{
         font-size: 15px;
